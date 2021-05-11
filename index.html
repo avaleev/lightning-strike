@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lightning Strike!</title>
+
+    <meta name="description" content="Generic lighting strike generator">
+    <meta name="author" content="Kirai Ikari">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/lightning-strike.css">
+  </head>
+  <body>
+    <div class="raging-sky" id="main-thunder-block">
+      <div class="thunder-cloud" id="emitter"></div>
+      <div class="catching-ground" id="catcher">
+        <mark
+          class="custom-mark"
+          data-offset-x="100%"
+          data-offset-y="100%"
+        ></mark>
+        <mark
+          class="custom-mark"
+          data-offset-x="50%"
+          data-offset-y="50%"
+        ></mark>
+        <mark
+          class="custom-mark"
+          data-offset-x="0%"
+          data-offset-y="0%"
+        ></mark>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/lightning-strike.js"></script>
+    <script type="text/javascript">
+      window.onload = function() {
+        const container = document.getElementById('main-thunder-block');
+        const emitter = document.getElementById('emitter');
+        const catcher = document.getElementById('catcher');
+
+        const DEBUG = true;
+        const ragingCloud = new LightningStrike(
+          container,
+          emitter,
+          catcher,
+          {
+            DEBUG: true,
+            Wrong: 'wrong',
+          }
+        );
+
+        /* For Testing Purposes Only */
+        window.addEventListener('keyup', event => {
+          console.log(event.key);
+          if (event.isComposing || event.key === 'd') {
+            ragingCloud.toggleDebug();
+          }
+        })
+      }
+    </script>
+  </body>
+</html>

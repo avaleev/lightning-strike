@@ -1,0 +1,9 @@
+.raging-sky {
+  position: absolute;
+  width: 80%;
+  height: 400px;
+  left: 10%;
+  top: 40%;
+  transform: translateY(-50%);
+  background-color: #121212;
+}

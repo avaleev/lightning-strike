@@ -13,7 +13,7 @@
   <body>
     <div class="raging-sky" id="main-thunder-block">
       <div class="thunder-cloud" id="emitter"></div>
-      <div class="catching-ground" id="catcher">
+      <div class="catching-ground" id="receiver">
         <mark
           class="custom-mark"
           data-offset-x="100%"
@@ -35,17 +35,16 @@
     <script type="text/javascript">
       window.onload = function() {
         const container = document.getElementById('main-thunder-block');
-        const emitter = document.getElementById('emitter');
-        const catcher = document.getElementById('catcher');
+        // const emitter = document.getElementById('emitter');
+        // const receiver = document.getElementById('receiver');
 
         const DEBUG = true;
         const ragingCloud = new LightningStrike(
           container,
-          emitter,
-          catcher,
           {
+            // emitterField: emitter,
+            // receiverField: receiver,
             DEBUG: true,
-            Wrong: 'wrong',
           }
         );
 
